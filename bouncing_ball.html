@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>bouncing</title>     
+    </head>
+    <body>
+        
+        <canvas id="canvas" width="300" height="300">
+        
+        <script>
+            
+            var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+var ball = {
+  x: 100,
+  y: 100,
+  dx: 5,
+  dy: 5,
+  radius: 25,
+  color: 'purple',
+  
+  draw: function() {
+    
+    ctx.clearRect(0,0,300,300);
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+    ctx.closePath();
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+};
+
+ball.draw();
+
+setInterval(draw,10);
+
+x+= dx;
+y+= dy;
+
+        </script>
+        <body onLoad='init();'>
+        </canvas>
+    </body>
+</html>
